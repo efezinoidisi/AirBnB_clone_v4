@@ -1,6 +1,8 @@
 $(document).ready(() => {
   const checkedAmenities = {};
   const checkboxes = $('input#amenity_checkbox');
+  const filterList = $('div.amenities h4');
+
   $.each(checkboxes, (index, checkbox) => {
     $(checkbox).on('change', () => {
       if ($(checkbox).is(':checked')) {
@@ -8,7 +10,15 @@ $(document).ready(() => {
       } else {
         delete checkedAmenities[$(checkbox).data('name')];
       }
-      console.log(checkedAmenities);
+      filterList.text("");
+      let numItems = 0;
+      $.each(checkedAmenities, (key, value) => {
+        if (numItems > 0) {
+          filterList.append(', ');
+        }
+        filterList.append(key);
+        numItems++;
+      });
     });
   });
 });

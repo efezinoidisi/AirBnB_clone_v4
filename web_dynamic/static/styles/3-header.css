@@ -19,6 +19,6 @@ header #api_status {
 	border-radius: 40px;
 	margin-right: 30px;
 }
-.available {
-	background-color: #ff545f !important;
+header #api_status.available {
+	background-color: #ff545f;
 }

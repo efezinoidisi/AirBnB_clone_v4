@@ -111,3 +111,7 @@ ul {
 .locations:hover .popover {
     visibility: visible;
 }
+
+.popover li input{
+    margin-right: 10px;
+}
